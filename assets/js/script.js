@@ -26,8 +26,8 @@ function showCityWeather(city, save) {
 
         // Show city info.
         $("#cityName").text(response.name + ", " + response.sys.country)
-        $("#weatherText").html(`The current temperature is ${response.main.temp}&deg; C, but it feels like ${response.main.feels_like}&deg; C.`)
-
+        $("#weatherText").html(`The current temperature is ${response.main.temp}&deg; C, but it feels like ${response.main.feels_like}&deg; C.Wind speed is ${response.wind.speed}humidity:${response.main.humidity}`)
+        
         // Got basic city forecast info, now get the 5 day forecast from dark sky.
         $.ajax({
             url: "https://api.darksky.net/forecast/b05444da8cca41be05ba60aa30699c1a/" + response.coord.lat + "," + response.coord.lon,
